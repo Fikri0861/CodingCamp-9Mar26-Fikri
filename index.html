@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productivity Hub</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+    <main class="app" aria-label="Productivity app">
+        <section class="card header-card" aria-label="Overview">
+            <div class="header-center">
+                <div id="currentTime" class="clock">10:45:22</div>
+                <div id="currentDate" class="subtext">Tuesday, January 27, 2026</div>
+                <div id="timerStatus" class="timer__status">Paused</div>
+                <p class="greeting" id="greeting">Good Morning</p>
+            </div>
+        </section>
+
+        <section class="controls" aria-label="Main controls">
+            <section class="card" aria-label="Focus timer">
+                <h2 class="card__title">Focus Timer</h2>
+                <div class="timer">
+                    <div id="timerDisplay" class="timer__display" aria-live="polite">25:00</div>
+                    <div class="timer__buttons">
+                        <button id="timerStart" class="button" type="button">Start</button>
+                        <button id="timerStop" class="button button--secondary" type="button">Stop</button>
+                        <button id="timerReset" class="button button--secondary" type="button">Reset</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="card" aria-label="To-do list">
+                <h2 class="card__title">Tasks</h2>
+                <div class="form" role="form">
+                    <input id="taskInput" type="text" placeholder="Add a new task..." autocomplete="off" aria-label="New task">
+                    <button id="taskAdd" class="button" type="button" disabled>Add</button>
+                </div>
+
+                <ul id="taskList" class="list" aria-label="Tasks"></ul>
+                <div id="tasksEmpty" class="empty-state" hidden>
+                    <p>No tasks yet, add one to get started.</p>
+                </div>
+            </section>
+
+            <section class="card span-2" aria-label="Quick links">
+                <h2 class="card__title">Quick Links</h2>
+                <div class="form" role="form">
+                    <input id="linkName" type="text" placeholder="Link name" autocomplete="off" aria-label="Link name">
+                    <input id="linkUrl" type="url" placeholder="URL" autocomplete="off" aria-label="Link URL">
+                    <button id="linkAdd" class="button" type="button" disabled>Add Link</button>
+                </div>
+
+                <ul id="linksList" class="list" aria-label="Links"></ul>
+                <div id="linksEmpty" class="empty-state" hidden>
+                    <p>No links yet. Add a favorite site to access it quickly.</p>
+                </div>
+            </section>
+        </section>
+    </main>
+
+    <script src="js/app.js"></script>
+</body>
+</html>
